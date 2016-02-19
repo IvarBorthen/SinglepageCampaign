@@ -4,16 +4,16 @@ A Boilerplate with what you need for easy set up of a static singlepage campaign
 
 ### Installation
 
-SinglepageCampaign is available as an [npm package](https://www.npmjs.com/package/SinglepageCampaign).
+singlepagecampaign is available as an [npm package](https://www.npmjs.com/package/singlepagecampaign).
 
 ```
-npm install SinglepageCampaign --save
+npm install singlepagecampaign --save
 ```
 
 
 ### Note
 
-This is an very early version of SinglepageCampaign.
+This is an very early version of https://github.com/IvarBorthen/singlepagecampaign.
 
 
 ## How to Use

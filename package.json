@@ -1,11 +1,13 @@
 {
-  "name": "BoilerplateCampaignSites",
+  "name": "singlepagecampaign",
   "description": "Speeds up our productiontime Knowit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ivar Borthen",
   "keywords": [
     "boilerplate",
+    "singlepagecampaign",
     "campaign",
+    "singlepage",
     "knowit experience",
     "mail",
     "php",

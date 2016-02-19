@@ -6,7 +6,10 @@
   "keywords": [
     "boilerplate",
     "campaign",
-    "knowit experience"
+    "knowit experience",
+    "mail",
+    "php",
+    "sass"
   ],
   "repository": {
     "type": "git"

@@ -1,0 +1,13 @@
+body, html {
+	margin : 0;
+	background : $background-color;
+}
+.content-block {
+	max-width : 960px;
+	padding : 0 30px;
+	margin : 0 auto 100px;
+	text-align : center;
+}
+.no-margin-bottom {
+	margin-bottom : 0 !important;
+}

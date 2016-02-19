@@ -1,0 +1,6 @@
+# Style guide ignores
+
+.sass-cache
+*.css.map
+node_modules
+*.log

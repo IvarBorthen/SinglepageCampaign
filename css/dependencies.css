@@ -1,0 +1,2 @@
+[data-parallaxy]{position:relative;overflow:hidden}[data-parallaxy]>:not([data-parallaxy-ignore]){position:absolute;display:block;top:0;-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top}[data-parallaxy-ignore]{position:relative}
+[data-animatewheninview]{opacity:0;transition:opacity .6s ease-out,transform .6s ease-out;transform:translate(0,20px)}[data-inview]{opacity:1;transform:translate(0,0)}

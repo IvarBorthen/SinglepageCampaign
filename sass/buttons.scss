@@ -1,0 +1,19 @@
+button, .btn {
+	border : 0;
+	margin : 0;
+	padding : 15px 30px;
+	font-size : 16px;
+	background : $btn-color-default;
+	color : $btn-color-text-default;
+	transition : background 200ms ease;
+	cursor : pointer;
+	&:hover {
+		background : darken($btn-color-default, 5%);
+	}
+	&.large {
+		padding : 20px 40px;
+		font-size : 20px;
+		line-height : 30px;
+		margin : 10px 0;
+	}
+}

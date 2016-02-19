@@ -1,0 +1,66 @@
+.footer {
+	width : 100%;
+	background : #e1e1e1;
+	padding-top : 80px;
+	padding-bottom : 0;
+	.content-block {
+		margin-bottom : 0 !important;
+	}
+	.footer-grid {
+		@include outer-container;
+		div {
+			text-align : left;
+			@media screen and (min-width: 750px) {
+				@include span-columns(4);
+			}
+		}
+	}
+	font-size : 14px;
+	p {
+		font-size : 14px;
+		line-height : 18px;	
+	}
+	h6 {
+		font-size : 18px;
+		margin-top : 13px;
+		text-transform: uppercase;
+		font-weight: $weight-bold;
+		@media screen and (max-width: 750px) {
+			margin-top : 30px;
+			margin-bottom : 0;
+		}
+	}
+	.social-icons {
+		a {
+			display: block;
+			margin-bottom : 5px;
+		}
+		h6 {
+			@media screen and (max-width: 750px) {
+				margin-bottom : 20px;
+			}
+		}
+	}
+	.fa {
+		color : #000;
+		padding-right : 5px;
+		font-size : 18px;
+	}
+	ul {
+		list-style-type: none;
+		margin: 60px 0 20px 0;
+		padding: 0;
+		width : 100%;
+		display: inline-block;
+		li {
+			display : inline-block;
+			border-right : 1px solid #ccc;
+			padding :  4px 20px;
+			float : right;
+			&:last-child {
+				border-right : 0;
+				padding-right : 0;
+			}
+		}
+	}
+}

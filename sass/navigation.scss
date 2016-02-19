@@ -1,0 +1,78 @@
+.main-nav {
+	display: block;
+	width : 100%;
+	background : #fff;
+	height : 68px;
+	@media screen and (max-width: 900px) {
+		height : 54px;
+	}
+	text-align : center;
+	border-bottom : 1px solid #ccc;
+	position : fixed;
+	top : 0;
+	z-index : 9999;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		max-width: $max-width;
+		li {
+			display : inline-block;
+			float : left;
+			a {
+				display : block;
+				padding : 20px 15px;
+				height : 68px;
+				box-sizing : border-box;
+				font-size : 18px;
+				text-decoration : none;
+				color : #000;
+				vertical-align: middle;
+				transition : background 200ms ease;
+				color : #333;
+				&:hover {
+					color : #000;
+					background-color : #eee;
+				}
+			}
+			&:not(.logo){
+				a {
+					@media screen and (max-width: 900px) {
+						font-size : 15px;
+						padding : 15px 10px;
+					}
+				}
+				@media screen and (max-width: 750px) {
+					display: none;
+				}
+			}
+			a {
+				@media screen and (max-width: 900px) {
+					height : 54px;
+				}
+			}
+		}
+		li.logo {
+			img {
+				max-width : 180px;
+				max-height : 48px;
+				@media screen and (max-width: 900px) {
+					max-width : 120px;
+					max-height : 30px;
+				}
+			}
+			a {
+				padding : 10px 40px 10px 0;
+				@media screen and (max-width: 750px) {
+					padding-left : 0;
+					padding-right : 0;
+				}
+			}
+			a:hover {
+				background-color : #fff;
+			}
+
+		}
+	}
+}

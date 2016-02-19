@@ -1,14 +1,13 @@
 {
   "name": "singlepagecampaign",
-  "description": "Speeds up our productiontime Knowit",
-  "version": "0.0.3",
+  "description": "Speeds up our productiontime",
+  "version": "0.0.4",
   "author": "Ivar Borthen",
   "keywords": [
     "boilerplate",
     "singlepagecampaign",
     "campaign",
     "singlepage",
-    "knowit experience",
     "mail",
     "php",
     "sass"

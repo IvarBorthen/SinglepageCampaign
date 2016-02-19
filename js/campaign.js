@@ -1,5 +1,5 @@
 // Scroll to position using header.
-$('.main-nav a').on('click', function(e){
+$('header a').on('click', function(e){
 	var _href = $(this).attr('href'),
 	_top = 0;
 	_href = _href.substr(_href.indexOf('#'));
@@ -21,6 +21,7 @@ $('#main-btn').on('click', function(e){
 	e.preventDefault();
 	return false;
 });
+
 
 // Instafeed setup
 var feed = new Instafeed({

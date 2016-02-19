@@ -5,22 +5,16 @@
 		margin-top : 54px;
 	}
 }
-.main-image-content {
-	padding : 350px 20px 100px 20px;
-	width : 100%;
+.main-content {
+	padding : 268px 0 200px 0;
 	text-align : center;
-	@media screen and (max-height: 900px) {
-   		padding : 150px 20px 100px 20px;
-	}
-	@media screen and (max-height: 700px) {
-   		padding : 100px 20px 80px 20px;
-	}
+	max-width : $grid-width-max;
+	margin : auto;
 	h1 {
 		color : #fff;
 	}
-	.intro-main {
+	p {
 		color : #fff;
-		font-size : 20px;
 	}
 }
 .calender-block {

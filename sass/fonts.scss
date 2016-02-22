@@ -17,9 +17,43 @@ h1 {
 	margin : 0;
 	color : #000;
 }
+h2 {
+	font-weight : $weight-light;
+	font-size : 48px;
+	line-height: 48px;
+	margin : 30px;
+	color : #333;
+}
+p {
+	color : #666;
+	font-size : 16px;
+	line-height : 24px;
+	margin : 0 0 24px 0;
+}
+p strong {
+	color : #000;
+}
+p.larger {
+	font-size : 24px;
+	line-height : 32px;
+	margin : 0 0 32px 0;
+	font-weight : $weight-light;
+}
 p.intro-largest {
 	font-size : 24px;
 	line-height : 36px;
 	font-weight : weight-normal;
 	color : #000;
+	margin-top : 36px;
+}
+.white {
+	> * {
+		color : #fff !important;
+		> * {
+			color : #fff !important;
+		}
+	}
+}
+.material-icons.large {
+	font-size : 48px;
 }

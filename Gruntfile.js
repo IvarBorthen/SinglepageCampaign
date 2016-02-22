@@ -12,14 +12,14 @@ module.exports = function(grunt) {
 				// parallaxy; Creates a parallaxy effect on images. Great for cinematic images.
 				// instafeed.js; Easy to set up a instagram feed.
 				src: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/parallaxy/dist/parallaxy.min.js', 'node_modules/instafeed.js/instafeed.min.js', 'node_modules/animatewheninview/dist/animatewheninview.min.js'],
-				dest: 'js/dependencies.js',
+				dest: 'dependencies/all.js',
 			},
 			nm_css: {
 				src: ['node_modules/parallaxy/dist/parallaxy.min.css', 'node_modules/animatewheninview/dist/animatewheninview.min.css'],
 				dest: 'css/dependencies.css'
 			},
 			js: {
-				src: ['js/dependencies.js', 'js/campaign.js'],
+				src: ['dependencies/all.js', 'js/*.js'],
 				dest: 'dist/campaign.js'
 			}
 		},
@@ -58,8 +58,8 @@ module.exports = function(grunt) {
 		browserSync: {
 			bsFiles: {
 				src : [
-					'./campaign.js',
-					'./campaign.css',
+					'./dist/campaign.min.js',
+					'./dist/campaign.min.css',
 				]
 			},
 			options: {

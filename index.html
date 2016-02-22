@@ -3,6 +3,7 @@
 	<head>
 		<title>Campaign - boilerplate</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="dist/campaign.min.css" />
 	</head>
 	<body>
@@ -29,53 +30,66 @@
 			</nav>
 		</header>
 
-		<div data-parallaxy class="container">
+		<div data-parallaxy class="container" id="containerMainVideo">
 			<video autoplay loop muted>
 				<source src="video/Clothing - 1331.mp4" type="video/ogg">
 				Your browser does not support the video tag.
 			</video>
 			<div data-parallaxy-ignore class="main-content" data-animatewheninview>
-				<h1>Singlepage campaign</h1>
-				<p class="intro-largest">
-					Simple template which helps you kickstart your own campaign. Let's save some productiontime!
-				</p>
-				<button class="large" id="to_paamelding"><i class="fa fa-arrow-down"></i> Go to form</button>
+				<div>
+					<h1>Singlepage campaign</h1>
+					<p class="intro-largest">
+						Simple template which helps you kickstart your own campaign. Let's save some productiontime!
+					</p>
+					<div class="btn large" id="main-btn">Scroll action</div>
+					<a href="http://www.google.com" class="btn transparent large" >Exit link</a>
+				</div>
 			</div>
 		</div>
 
-		<div class="wide-content-block">
+		<div class="wide-content-block" id="substractMainVideoHeight">
 			<section class="selling-points">
 				<div>
-					<i class="material-design"></i>
-					Easy form to mail setup
+					<i class="material-icons">mail_outline</i>
+					<h3>Easy form to mail setup</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
 				</div>
 				<div>
-					Instagram features
+					<i class="material-icons">photo_camera</i>
+					<h3>Instagram features</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
 				</div>
 				<div>
-					Share page baked in
+					<i class="material-icons">restore</i>
+					<h3>A true timesaver</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
 				</div>
 			</section>
 		</div>
 
 		<div class="content-block">
-			<h3>
-				When hard work is dumb
-			</h3>
-			<p>	
-				Steamline your production and get more time to play, have fun or just make what you do even more awesome! This template relieve you from the tedious work it is to set up a basic single page.
+			<h2>
+				Keep things simple
+			</h2>
+			<hr class="thick" />
+			<p class="larger">	
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 			</p>
-			<p>
-				Life is too short for tedious and repetitive work, so use this as a base to set up your next singlepage campaign.
+			<p class="larger">
+				Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 			</p>
+		</div>
+		<div class="content-block" data-animatewheninview>
+			<img src="images/girl-1076998_1280.jpg" class="max-width"><hr />
 		</div>
 		<div class="content-block" id="programme" data-animatewheninview>
 			<h2>
 				Programme
 			</h2>
+			<p class="larger">
+				Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+			</p>
 			<div class="calender-block">
-				<div class="map-icons">
-				</div>
 				<div class="date-text">
 					<p class="date">
 						17.
@@ -88,8 +102,6 @@
 				</p>
 			</div>
 			<div class="calender-block">
-				<div class="map-icons">
-				</div>
 				<div class="date-text">
 					<p class="date">
 						18.
@@ -102,8 +114,6 @@
 				</p>
 			</div>
 			<div class="calender-block">
-				<div class="map-icons">
-				</div>
 				<div class="date-text">
 					<p class="date">
 						19.
@@ -116,23 +126,44 @@
 				</p>
 			</div>
 		</div>
+		<div data-parallaxy class="container">
+			<img src="images/roadway-1081812_1920.jpg">
+			<div data-parallaxy-ignore class="content-block">
+				<section class="selling-points white" data-animatewheninview>
+					<div>
+						<i class="material-icons large">directions_bike</i>
+						<h3>Some text</h3>
+					</div>
+					<div>
+						<i class="material-icons large">flight</i>
+						<h3>Some text</h3>
+					</div>
+					<div>
+						<i class="material-icons large">terrain</i>
+						<h3>Some text</h3>
+					</div>
+					<div>
+						<i class="material-icons large">map</i>
+						<h3>Some text</h3>
+					</div>
+				</section>
+			</div>
+		</div>
 		<div class="content-block" id="signup" data-animatewheninview>
 			<h2>
 				Sign up now!
 			</h2>
-			<p class="intro">	
+			<hr class="thick" />
+			<p class="larger">	
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 			</p>
 			<p>	
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-			<p>
 				Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
-			<p><strong>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip:</strong></p>
+			<p><strong>Just a superbasic form:</strong></p>
 			<form class="contact-form" id="contact-form" name="contact-form" action="php/mailform.php" method="POST">
 				<fieldset>
 					<input class="input" type="text" name="name" id="name" placeholder="Name">
@@ -146,8 +177,9 @@
 			<h2>
 				#Lasttrip
 			</h2>
+			<hr class="thick" />
 		</div>
-		<div id="instafeed-container">
+		<div class="content-block" id="instafeed-container">
 			<div id="instafeed"></div>
 		</div>
 		<div class="content-block">

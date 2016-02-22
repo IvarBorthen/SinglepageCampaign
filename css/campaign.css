@@ -2460,20 +2460,51 @@ h1 {
   margin: 0;
   color: #000; }
 
+h2 {
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 30px;
+  color: #333; }
+
+p {
+  color: #666;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px 0; }
+
+p strong {
+  color: #000; }
+
+p.larger {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 32px 0;
+  font-weight: 300; }
+
 p.intro-largest {
   font-size: 24px;
   line-height: 36px;
   font-weight: weight-normal;
-  color: #000; }
+  color: #000;
+  margin-top: 36px; }
+
+.white > * {
+  color: #fff !important; }
+  .white > * > * {
+    color: #fff !important; }
+
+.material-icons.large {
+  font-size: 48px; }
 
 body, html {
   margin: 0;
-  background: #f8f8f8; }
+  background: #fff; }
 
 .content-block {
   max-width: 960px;
   padding: 0 30px;
-  margin: 0 auto 100px;
+  margin: 100px auto 100px;
   text-align: center; }
 
 .wide-content-block {
@@ -2482,6 +2513,25 @@ body, html {
 
 .no-margin-bottom {
   margin-bottom: 0 !important; }
+
+img.max-width {
+  max-width: 100%; }
+
+hr {
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #f5f5f5;
+  margin: 0; }
+
+hr.thick {
+  border: 0;
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #2196f3;
+  margin: 30px auto; }
 
 fieldset {
   margin: 0;
@@ -2539,14 +2589,23 @@ button, .btn {
   background: #009788;
   color: #fff;
   transition: background 200ms ease;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 3px solid #009788; }
   button:hover, .btn:hover {
     background: #007e71; }
   button.large, .btn.large {
     padding: 20px 40px;
     font-size: 20px;
     line-height: 30px;
-    margin: 10px 0; }
+    margin: 10px 5px; }
+  button.transparent, .btn.transparent {
+    background: rgba(0, 0, 0, 0.25);
+    border: 3px solid #fff; }
+    button.transparent:hover, .btn.transparent:hover {
+      color: #000;
+      background: #fff; }
 
 .header nav {
   display: block;
@@ -2584,6 +2643,9 @@ button, .btn {
         .header nav ul li a:hover {
           color: #000;
           background-color: #eee; }
+        .header nav ul li a.active {
+          color: blue;
+          background-color: red; }
 
 .footer {
   width: 100%;
@@ -2656,14 +2718,40 @@ button, .btn {
       margin-top: 54px; } }
 
 .main-content {
-  padding: 268px 0 200px 0;
   text-align: center;
   max-width: 960px;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100%; }
   .main-content h1 {
     color: #fff; }
   .main-content p {
     color: #fff; }
+
+.selling-points {
+  display: flex;
+  max-width: 960px;
+  margin: auto; }
+  .selling-points > div {
+    flex: 1;
+    text-align: center;
+    margin: 10px; }
+    .selling-points > div i {
+      font-size: 30px;
+      color: #2196f3; }
+    .selling-points > div h3 {
+      text-transform: uppercase;
+      color: #000;
+      font-size: 18px;
+      line-height: 24px;
+      margin: 10px 0; }
+
+.map-class {
+  margin-left: auto;
+  margin-right: auto; }
+  .map-class img {
+    max-width: none; }
 
 .calender-block {
   width: 100%;
@@ -2671,21 +2759,11 @@ button, .btn {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   text-align: left;
   display: table;
-  cursor: pointer;
-  transition: all 300ms ease;
-  background: url("../images/arrow.png") #fff no-repeat calc(100% - 40px) 50%; }
+  cursor: pointer; }
   .calender-block > * {
     display: table-cell;
     box-sizing: border-box;
     vertical-align: top; }
-  .calender-block .map-icons {
-    min-width: 130px;
-    max-width: 130px;
-    min-height: 130px;
-    background: url("../images/map_graphics.png") no-repeat top; }
-    @media screen and (max-width: 750px) {
-      .calender-block .map-icons {
-        display: none; } }
   .calender-block .date-text {
     text-align: center;
     padding: 10px 15px 20px 15px;
@@ -2766,18 +2844,15 @@ button, .btn {
         max-width: 120px; } }
 
 #instafeed-container {
-  max-width: 2310px;
-  width: 100%;
-  height: 306px;
+  height: 308px;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px; }
 
 #instafeed {
-  height: 306px;
-  width: 2310px; }
+  width: calc(154px * 5); }
   #instafeed a {
-    margin: 2px; }
+    position: relative; }
 
 /*# sourceMappingURL=campaign.css.map */

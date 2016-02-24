@@ -2511,6 +2511,12 @@ body, html {
   background: #eee;
   padding: 40px 0; }
 
+.content-block-larger {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 100px auto 100px;
+  text-align: center; }
+
 .no-margin-bottom {
   margin-bottom: 0 !important; }
 
@@ -2532,6 +2538,11 @@ hr.thick {
   height: 4px;
   background: #2196f3;
   margin: 30px auto; }
+
+#insertMap {
+  width: 100%;
+  height: 500px;
+  background: #f5f5f5; }
 
 fieldset {
   margin: 0;
@@ -2588,7 +2599,7 @@ button, .btn {
   font-size: 16px;
   background: #009788;
   color: #fff;
-  transition: background 200ms ease;
+  transition: all 200ms ease;
   cursor: pointer;
   display: inline-block;
   box-sizing: border-box;
@@ -2601,11 +2612,12 @@ button, .btn {
     line-height: 30px;
     margin: 10px 5px; }
   button.transparent, .btn.transparent {
-    background: rgba(0, 0, 0, 0.25);
-    border: 3px solid #fff; }
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.8); }
     button.transparent:hover, .btn.transparent:hover {
       color: #000;
-      background: #fff; }
+      background: #fff;
+      border-color: #fff; }
 
 .header nav {
   display: block;
@@ -2649,12 +2661,12 @@ button, .btn {
 
 .footer {
   width: 100%;
-  background: #e1e1e1;
+  background: #222;
   padding-top: 80px;
   padding-bottom: 0;
   font-size: 14px; }
   .footer .content-block {
-    margin-bottom: 0 !important; }
+    margin-top: 0 !important; }
   .footer .footer-grid {
     max-width: 68em;
     margin-left: auto;
@@ -2664,7 +2676,9 @@ button, .btn {
       content: "";
       display: table; }
     .footer .footer-grid div {
-      text-align: left; }
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 10px; }
       @media screen and (min-width: 750px) {
         .footer .footer-grid div {
           float: left;
@@ -2675,11 +2689,13 @@ button, .btn {
             margin-right: 0; } }
   .footer p {
     font-size: 14px;
-    line-height: 18px; }
+    line-height: 18px;
+    color: #fff; }
   .footer h6 {
     font-size: 18px;
     margin-top: 13px;
     text-transform: uppercase;
+    color: #ccc;
     font-weight: 700; }
     @media screen and (max-width: 750px) {
       .footer h6 {
@@ -2687,28 +2703,20 @@ button, .btn {
         margin-bottom: 0; } }
   .footer .social-icons a {
     display: block;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    color: #fff; }
+    .footer .social-icons a i {
+      color: #2196f3;
+      padding-right: 5px;
+      font-size: 18px; }
   @media screen and (max-width: 750px) {
     .footer .social-icons h6 {
       margin-bottom: 20px; } }
-  .footer .fa {
-    color: #000;
-    padding-right: 5px;
-    font-size: 18px; }
-  .footer ul {
-    list-style-type: none;
-    margin: 60px 0 20px 0;
-    padding: 0;
-    width: 100%;
-    display: inline-block; }
-    .footer ul li {
-      display: inline-block;
-      border-right: 1px solid #ccc;
-      padding: 4px 20px;
-      float: right; }
-      .footer ul li:last-child {
-        border-right: 0;
-        padding-right: 0; }
+  .footer .author {
+    text-align: center;
+    background: #000;
+    color: #999;
+    padding: 5px; }
 
 .top-content {
   margin-top: 68px;
@@ -2756,7 +2764,6 @@ button, .btn {
 .calender-block {
   width: 100%;
   margin-bottom: 25px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   text-align: left;
   display: table;
   cursor: pointer; }
@@ -2801,34 +2808,49 @@ button, .btn {
         padding-right: 60px; } }
     .calender-block .info-text strong {
       color: #000; }
-  .calender-block:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    background: url("../images/arrow.png") #fff no-repeat calc(100% - 25px) 50%; }
-  @media screen and (max-width: 600px) {
-    .calender-block {
-      background: url("../images/arrow.png") #fff no-repeat calc(100% - 25px) 50%; } }
 
-.contact-info {
-  text-align: left; }
-  .contact-info .profile-image {
-    display: inline-block;
-    position: absolute;
-    float: left;
-    border-radius: 100%; }
-  .contact-info .contact-us-text {
-    font-size: 30px;
-    line-height: 40px;
-    text-align: left;
-    font-weight: 300; }
-    @media screen and (max-width: 600px) {
-      .contact-info .contact-us-text {
+.special-deals {
+  display: flex;
+  margin-bottom: 40px; }
+  .special-deals > a {
+    flex: 1;
+    margin: 0 40px 0 0;
+    background: #eee;
+    text-align: center;
+    display: block;
+    transition: background-color 200ms ease; }
+    .special-deals > a h6 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      padding: 0; }
+    .special-deals > a .base {
+      background: #2196f3;
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 0;
+      transition: background-color 200ms ease; }
+    .special-deals > a .price {
+      font-size: 48px;
+      color: #000;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-right: 10px; }
+      .special-deals > a .price small {
         font-size: 18px;
-        line-height: 24px; } }
-  .contact-info .profile-image + .contact-us-text {
-    padding-left: 110px; }
-    @media screen and (max-width: 600px) {
-      .contact-info .profile-image + .contact-us-text {
-        padding-left: 90px; } }
+        margin-right: 5px; }
+    .special-deals > a .price_sub {
+      margin-top: 0; }
+    .special-deals > a:last-child {
+      margin-right: 0; }
+    .special-deals > a:hover {
+      background: #ddd; }
+      .special-deals > a:hover .base {
+        background: #0c7cd5; }
+    .special-deals > a:active {
+      transform: scale(0.95); }
 
 .logo-salad {
   text-align: center; }
@@ -2843,16 +2865,18 @@ button, .btn {
       .logo-salad img {
         max-width: 120px; } }
 
-#instafeed-container {
+div#instafeed-container {
   height: 308px;
-  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px; }
+  width: calc(154px * 5);
+  margin-bottom: 50px;
+  padding: 0; }
 
 #instafeed {
-  width: calc(154px * 5); }
+  width: calc(154px * 5);
+  position: relative; }
   #instafeed a {
-    position: relative; }
+    position: absolute; }
 
 /*# sourceMappingURL=campaign.css.map */

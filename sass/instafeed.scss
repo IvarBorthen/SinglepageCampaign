@@ -1,13 +1,15 @@
-#instafeed-container {
+div#instafeed-container {
 	height : 308px;
-	overflow : hidden;
 	margin-left : auto;
 	margin-right : auto;
+	width : calc(154px * 5);
 	margin-bottom : 50px;
+	padding : 0;
 }
 #instafeed {
 	width : calc(154px * 5);
+	position : relative;
 	a {
-		position : relative;
+		position : absolute;
 	}
 }

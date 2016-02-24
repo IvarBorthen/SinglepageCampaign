@@ -9,36 +9,8 @@ function initSmoothScroll(){if(document.body){var a=document.body,b=document.doc
 var AnimateWhenInView=function(){function animatewheninview(){return this.allElements=[],this.init=function(){this.getElements(),this.updateClasses()},this.getElements=function(){var a=document.querySelectorAll("[data-animatewheninview]");for(this.allElements=[],i=0;i<a.length;i++)this.allElements[i]=[a[i],!1]},this.update=function(){this.init()},this.activateElement=function(){if(this.setAttribute("data-inview",!0),this.getAttribute("data-animatecallback"))try{eval(this.getAttribute("data-animatecallback"))(this)}catch(e){console.log("failed on calling function data-animatecallback on element "+this)}},this.updateClasses=function(){var a=(window.pageYOffset||document.documentElement.scrollTop)-(document.documentElement.clientTop||0),b=Math.max(document.documentElement.clientHeight,window.innerHeight||0);for(i=0;i<this.allElements.length;i++)if(!this.allElements[i][1]){var c=this.allElements[i][0];if(c.offsetTop+(c.getAttribute("data-animateoffset")?Number(c.getAttribute("data-animateoffset")):0)<a+b){this.allElements[i][1]=!0;setTimeout(this.activateElement.bind(c),c.getAttribute("data-animatedelay")?c.getAttribute("data-animatedelay"):0)}}},document.addEventListener("DOMContentLoaded",this.init.bind(this)),window.addEventListener("resize",this.updateClasses.bind(this)),window.addEventListener("scroll",this.updateClasses.bind(this)),this.prototype}return new animatewheninview}();
 // Click on button in main window
 $('#main-btn').on('click', function(e){
-	_top = $('#programme').offset().top - 100;
-	$('html, body').stop().animate({
-		'scrollTop' : _top
-	}, 600);
-	e.preventDefault();
-	return false;
+	animateScrollTo('#what');
 });
-var instaZ = 0;
-setInterval(function(){
-	instaZ++;
-	var _imgs = $('#instafeed a');
-	console.log(instaZ);
-	console.log((instaZ%2));
-	$('#instafeed a').eq(Math.floor(Math.random()*_imgs.length)).css({
-		zIndex : instaZ,
-		top : (instaZ%2)+'px',
-		'left' : (instaZ%2)+'px'
-	});
-	console.log('move', Math.floor(Math.random()*_imgs.length));
-}, 3000);
-
-$('#instafeed a').each(function(){
-	instaZ++;
-	$(this).css({
-		zIndex : instaZ,
-		top : ((instaZ%2) * 154)+'px',
-		'left' : ((instaZ%5 * 154))+'px'
-	}).hide().fadeIn(500);
-});
-
 // Instafeed setup
 var feed = new Instafeed({
     // get: 'tagged',
@@ -47,6 +19,7 @@ var feed = new Instafeed({
     clientId: '467ede5a6b9b48ae8e03f4e2582aeeb3', // replace with your instagram id 
     limit: '30',
     after : function(){
+    	var instaZ = 0;
     	$('#instafeed a').each(function(){
 			instaZ++;
 			$(this).css({
@@ -54,45 +27,56 @@ var feed = new Instafeed({
 				top : ((instaZ%2) * 154)+'px',
 				'left' : ((instaZ%5 * 154))+'px'
 			});
-
-		})
+		});
+    	setInterval(function(){
+			instaZ++;
+			var _imgs = $('#instafeed a');
+			$('#instafeed a').eq(Math.floor(Math.random()*_imgs.length)).css({
+				zIndex : instaZ,
+			}).hide().fadeIn(1000);
+		}, 2000);
 	}
 });
-    
+
 feed.run();
+var map;
+function initMap() {
+	var latlng = {lat: 60.39316, lng: 5.31834};
+  	map = new google.maps.Map(document.getElementById('insertMap'), {
+    	center: latlng,
+   		zoom: 14,
+   		scrollwheel: false
+  	});
+  	var marker = new google.maps.Marker({
+    	position: latlng,
+    	map: map,
+    	title: 'Hello World!'
+  	});
+}
+initMap();
 // Scroll to position using header.
 $('.header ul a').on('click', function(e){
-	var _href = $(this).attr('href'),
-	_top = 0;
+	animateScrollTo(this);
+	e.preventDefault();
+	return false;
+});
+var animateScrollTo = function(e){
+	var _top = 0;
+	if(typeof e ==='string'){
+		_href = e;
+	} else {
+		_href = $(e).attr('href');
+	}
 	if(_href.indexOf('#') > -1){
 		_href = _href.substr(_href.indexOf('#'));
 		if(_href !== '#'){
-			_top = $(_href).offset().top - 100;
+			_top = $(_href).offset().top - 150;
 		}
 		$('html, body').stop().animate({
 			'scrollTop' : _top
 		}, 600);
-		e.preventDefault();
-		return false;
 	}
-});
-/*
-$(document).on('scroll', function(){
- 	var scrollPos = $(document).scrollTop();
- 	var allLinks = $('.header ul a').removeClass('active').each(function () {
-	    var _href = $(this).attr('href');
-	    if(_href.indexOf('#') > -1){
-	    	var $el = $(_href.substr(_href.indexOf('#')));
-	    	if($el.length){
-			    if ($el.position().top + $el.height() > scrollPos + 200) {
-			        $(this).addClass('active');
-			        return false;
-			    }
-			}
-		}
-	});
-});
-*/
+}
 
 var updateMainVideoSize = function(){
 	var scrollPos = $(document).scrollTop();
@@ -101,3 +85,47 @@ var updateMainVideoSize = function(){
 
 $(document).on('scroll', updateMainVideoSize);
 $(window).on('resize', updateMainVideoSize);
+
+function PopupCenter(url, title, w, h) {
+    // Fixes dual-screen position                         Most browsers      Firefox
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+        newWindow.focus();
+    }
+}
+
+$(function(){
+	// Share on Facebook
+	$('[data-share-facebook]').on('click', function(e){
+		// share this page //
+		PopupCenter('https://www.facebook.com/sharer/sharer.php?u='+window.location.href.split("#")[0],'Share on Facebook','500','500');  
+	});
+	// Share on Twitter
+	$('[data-share-twitter]').on('click', function(e){
+		// share this page //
+		PopupCenter('https://twitter.com/home?status='+window.location.href.split("#")[0],'Share on Twitter','500','500');  
+	});
+	// Share on Google+
+	$('[data-share-googleplus]').on('click', function(e){
+		// share this page //
+		PopupCenter('https://plus.google.com/share?url='+window.location.href.split("#")[0],'Share on Google+','500','500');  
+	});
+	// Share on LinkedIn
+	$('[data-share-linkedin]').on('click', function(e){
+		// Change title and add summary if you want.
+		var _requiredTitle = 'Title'; // REQUIRED
+		var _optionalSummary = ''; // OPTIONAL
+		// share this page //
+		PopupCenter('https://www.linkedin.com/shareArticle?mini=true&url='+window.location.href.split("#")[0]+'&title='+_requiredTitle+(_optionalSummary!=='' ? '&'+_optionalSummary : ''),'Share on Google+','500','500');  
+	});
+});

@@ -2,9 +2,13 @@
 <html>
 	<head>
 		<title>Campaign - boilerplate</title>
+		<!-- optional's -->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    	<!-- remove above if not in use -->
 		<link rel="stylesheet" type="text/css" href="dist/campaign.min.css" />
+		
 	</head>
 	<body>
 		<header class="header">
@@ -12,19 +16,19 @@
 				<a class="logo" href="index.html#"><img src="http://www.placehold.it/150x40" alt="logo"></a>
 				<ul>
 					<li>
-						<a href="index.html#programme">Work hard</a>
+						<a href="index.html#what">What is this?</a>
 					</li>
 					<li>
-						<a href="index.html#signup">Products</a>
+						<a href="index.html#products">Products</a>
 					</li>
 					<li>
-						<a href="index.html#lasttrip">Instafeed</a>
+						<a href="index.html#signup">Sign up</a>
+					</li>
+					<li>
+						<a href="index.html#instagram">Instafeed</a>
 					</li>
 					<li>
 						<a href="index.html#partners">Partners</a>
-					</li>
-					<li>
-						<a href="index.html#contactus">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -67,64 +71,61 @@
 			</section>
 		</div>
 
-		<div class="content-block">
+		<div class="content-block" id="what" data-animatewheninview>
 			<h2>
-				Keep things simple
+				What is this?
 			</h2>
 			<hr class="thick" />
 			<p class="larger">	
-				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+				This is a simple static singlepage boilerplate, containing some of the most used features in a landingpage/campaign site.
 			</p>
 			<p class="larger">
-				Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+				It has basic features included such as video and parallaxy effects on images, Instagramfeeds, Share on social media buttons, basic Google map implementation and more.
 			</p>
 		</div>
 		<div class="content-block" data-animatewheninview>
 			<img src="images/girl-1076998_1280.jpg" class="max-width"><hr />
 		</div>
-		<div class="content-block" id="programme" data-animatewheninview>
+		<div class="content-block" data-animatewheninview id="products">
 			<h2>
-				Programme
+				Products
 			</h2>
 			<p class="larger">
-				Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+				Just some examples of product listing. Note that we also make use of the animatewheninview plugin for many of the main components on this page.
 			</p>
-			<div class="calender-block">
-				<div class="date-text">
-					<p class="date">
-						17.
-					</p>
-					<p class="month">
-						april
-					</p>
-				</div>
-				<p class="info-text"><strong>20:00 p.m. sed do eiusmod tempor incididunt</strong> enim ad minim veniam, quis nostrud exercitation.
-				</p>
+		</div>
+		<div class="content-block-larger" data-animatewheninview>
+			<div class="special-deals">
+				<a href="http://www.google.com" target="_blank">
+					<h6>Starter</h6>
+					<p>Unlimited updated</p>
+					<p class="price"><small class="pre-fix">$</small>49</p>
+					<p class="price_sub">/month</p>
+					<p class="base">Free apples<br>Every Monday</p>
+				</a>
+				<a href="http://www.google.com" target="_blank">
+					<h6>Basic</h6>
+					<p>Unlimited updated</p>
+					<p class="price"><small class="pre-fix">$</small>99</p>
+					<p class="price_sub">/month</p>
+					<p class="base">Free mangoes<br>Every day</p>
+				</a>
+				<a href="http://www.google.com" target="_blank">
+					<h6>Pro</h6>
+					<p>Unlimited updated</p>
+					<p class="price"><small class="pre-fix">$</small>129</p>
+					<p class="price_sub">/month</p>
+					<p class="base">Free cookies<br>All weekend</p>
+				</a>
+				<a href="http://www.google.com" target="_blank" class="labeled">
+					<h6>Ultimate</h6>
+					<p>Unlimited updated</p>
+					<p class="price"><small class="pre-fix">$</small>249</p>
+					<p class="price_sub">/month</p>
+					<p class="base">Free donuts<br>Every day</p>
+				</a>
 			</div>
-			<div class="calender-block">
-				<div class="date-text">
-					<p class="date">
-						18.
-					</p>
-					<p class="month">
-						april
-					</p>
-				</div>
-				<p class="info-text"><strong>20:00 p.m. sed do eiusmod tempor incididunt</strong> enim ad minim veniam, quis nostrud exercitation.
-				</p>
-			</div>
-			<div class="calender-block">
-				<div class="date-text">
-					<p class="date">
-						19.
-					</p>
-					<p class="month">
-						april
-					</p>
-				</div>
-				<p class="info-text"><strong>20:00 p.m. sed do eiusmod tempor incididunt</strong> enim ad minim veniam, quis nostrud exercitation.
-				</p>
-			</div>
+			<p>*Lorem ipsum quae ab illo inventore veritatis <a href="#">frakuts costus</a></p>
 		</div>
 		<div data-parallaxy class="container">
 			<img src="images/roadway-1081812_1920.jpg">
@@ -155,7 +156,7 @@
 			</h2>
 			<hr class="thick" />
 			<p class="larger">	
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+				Simple forms which sends an email containing the data. To configure this have a look at the file php/mailform.php. In later versions this will be approved upon.
 			</p>
 			<p>	
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -164,7 +165,7 @@
 				Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
 			<p><strong>Just a superbasic form:</strong></p>
-			<form class="contact-form" id="contact-form" name="contact-form" action="php/mailform.php" method="POST">
+			<form class="contact-form" name="contact-form" action="php/mailform.php" method="POST">
 				<fieldset>
 					<input class="input" type="text" name="name" id="name" placeholder="Name">
 					<input class="input" type="text" name="email" id="email" placeholder="E-mail">
@@ -173,27 +174,26 @@
 				</fieldset>
 			</form>
 		</div>
-		<div class="content-block no-margin-bottom" id="lasttrip" data-animatewheninview>
+		<div class="content-block no-margin-bottom" id="instagram" data-animatewheninview>
 			<h2>
-				#Lasttrip
+				#Instagramfeed
 			</h2>
 			<hr class="thick" />
+			<p class="larger">
+				Set up your own feed by configuring the file js/instagram.js.
+			</p>
 		</div>
 		<div class="content-block" id="instafeed-container">
 			<div id="instafeed"></div>
-		</div>
-		<div class="content-block">
-			<p class="intro">
-				Special thanks to
-			</p>
-			<p>
-				https://pixabay.com/ for free images. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
 		</div>
 		<div class="content-block" id="partners" data-animatewheninview>
 			<h2>
 				Partners
 			</h2>
+			<hr class="thick" />
+			<p class="larger">
+				Images and video on this page was provided free from <a href="http://www.pixabay.com" target="_blank">Pixabay.com</a>
+			</p>
 			<div class="logo-salad">
 				<img src="http://www.placehold.it/200x150">
 				<img src="http://www.placehold.it/200x150">
@@ -203,42 +203,41 @@
 				<img src="http://www.placehold.it/200x150">
 				<img src="http://www.placehold.it/200x150">
 				<img src="http://www.placehold.it/200x150">
+				<img src="http://www.placehold.it/200x150">
+				<img src="http://www.placehold.it/200x150">
+				<img src="http://www.placehold.it/200x150">
+				<img src="http://www.placehold.it/200x150">
 			</div>
 		</div>
-		<div class="content-block" id="contactus" data-animatewheninview>
-			<div class="contact-info">
-				<img src="http://www.placehold.it/80x80" class="profile-image">
-				<p class="contact-us-text">
-					For any question contact John Doe on <a href="tel:+4790050132">+44 444 44 444</a> or <a href="mailto:mail@mail.com">mail@mail.com</a>
-				</p>
-			</div>
-		</div>   
+		<div class="content-block-wide">
+			<div id="insertMap"></div>
+		</div>
 		<footer class="footer">
 			<div class="content-block">
 				<div class="footer-grid">
-					<div>
-						<a href="http://www.google.com"><img src="http://www.placehold.it/150x100" alt="logo"></a>
-					</div>
+					<!-- Your share button code -->
 					<div class="social-icons">
-						<h6>Sosialus do medius amet</h6>
-						<a href="#"><i class="fa fa-facebook-square"></i>Facebook</a>
-						<a href="#"><i class="fa fa-instagram"></i>Instagram</a>
-						<a href="#"><i class="fa fa-twitter-square"></i>Twitter</a>
-						<a href="#"><i class="fa fa-linkedin-square"></i>Linked</a>
+						<h6>Share this page on</h6>
+						<!-- Use data-share-[socialmedia] data-attributes to generate links -->
+						<!-- For the js part; have a look at js/shareOnSocialMedia.js -->
+						<a data-share-facebook><i class="fa fa-facebook-square"></i>Facebook</a>
+						<a data-share-twitter><i class="fa fa-twitter"></i>Twitter</a>
+						<a data-share-googleplus><i class="fa fa-google-plus"></i>Google+</a>
+						<a data-share-linkedin><i class="fa fa-linkedin-square"></i>LinkedIn</a>
+						<a href="mailto:post@mail.com&subject=enter%20your%subject&body=check%20this%20out"><i class="fa fa-envelope"></i>Mail</a>
 					</div>
 					<div>
 						<h6>Share your experience</h6>
-						<p><strong>#hashtags</strong></p>
 						<p>Tempor incididunt ut labore et dolore magna aliqua instagrammus consectetur elit.</p>
 					</div>
+					<div>
+						<h6>More about me</h6>
+						<p>Im a frontend developer and designer who loves making cool stuff.</p>
+						<p>Check out my other free stuff <a href="https://www.npmjs.com/~iborthen">here</a></p>
+					</div>
 				</div>
-				<ul>
-					<li>Sentralbord <a href="tel:02486">02468</a></li>
-					<li><a href="mailto:post@mail.mail">post@mail.com</a></li>
-					<li><a href="###">Dolores magna</a></li>
-					<li><a href="###">Veniam nostrud</a></li>
-				</ul>
 			</div>
+			<div class="author">Created by Ivar Borthen 2016</div>
 		</footer>
 		<script src="dist/campaign.min.js"></script>
 	</body>

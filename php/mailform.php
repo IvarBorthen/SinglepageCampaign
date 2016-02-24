@@ -4,9 +4,9 @@ set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/html/frameworks
 require_once("Zend/Mail.php");
 require_once("Zend/Mail/Transport/Smtp.php");
 if(!empty($_REQUEST['contactform'])){
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST['email'];
-    $company = $_REQUEST['company'];
+    $name = $_REQUEST['name']; // Make sure this is correct if you change the HTML form
+    $email = $_REQUEST['email']; // Make sure this is correct if you change the HTML form
+    $company = $_REQUEST['company']; // Make sure this is correct if you change the HTML form
 
     $messagehtml='<html><head><style>
                      table.email{
@@ -24,21 +24,21 @@ if(!empty($_REQUEST['contactform'])){
                 </html>';
     $suc = true;
     $config = array('auth' => 'login',
-                'username' => '***@****.***',
-                'password' => '****',
+                'username' => '***@****.***', // UPDATE TO YOUR USERNAME
+                'password' => '****', // UPDATE PASSWORD
                 'port'=>25);
     $mail = new Zend_Mail('UTF-8');
-    $tr1 = new Zend_Mail_Transport_Smtp('***.****.****', $config);
+    $tr1 = new Zend_Mail_Transport_Smtp('***.****.****', $config); // UPDATE REQUIRED
 
     $mail->setBodyText(utf8_encode($messagehtml));
     $mail->setBodyHtml($messagehtml);
-    $mail->setFrom("**********@*****.***", "*****.***");
+    $mail->setFrom("**********@*****.***", "*****.***"); // send mail from REQUIRED
 
-    $mail->addTo("*****@*****.***");
+    $mail->addTo("*****@*****.***"); // send mail to REQUIRED
     
-    $mail->addBcc("*****@*****.***");
+    $mail->addBcc("*****@*****.***"); // Optional
 
-    $mail->setSubject('Subject text');
+    $mail->setSubject('Subject text'); // Enter your subject text
 
     $mail->send($tr1);
 }

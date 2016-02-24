@@ -24,6 +24,16 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// https://www.npmjs.com/package/grunt-copy
+		copy: {
+		    fontawesome : {
+				cwd: 'node_modules/font-awesome/fonts',  // set working folder / root to copy
+			    src: '**/*',           // copy all files and subfolders
+			    dest: 'fonts/',    // destination folder
+			    expand: true           // required when using cwd
+			}
+		},
+
 		// https://github.com/gruntjs/grunt-contrib-uglify
 		uglify: {
 			dist: {
@@ -84,6 +94,7 @@ module.exports = function(grunt) {
 
 	// Load plugins
 	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -93,6 +104,7 @@ module.exports = function(grunt) {
 
 	// Task to run when doing 'grunt' in terminal.
 	grunt.registerTask('default', [
+		'copy:fontawesome', // copy font-awesome files
 		'concat:nm_js', // concat node_modules js files
 		'concat:nm_css', // concat node_modules css files
 		'concat:js',

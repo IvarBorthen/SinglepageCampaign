@@ -16,6 +16,11 @@ npm install singlepagecampaign --save
 This is an very early version of https://github.com/IvarBorthen/singlepagecampaign.
 
 
+### Demo
+
+Check out a demo of this boilertemplate here http://singlepagecampaign.v9.no/.
+
+
 ## How to Use
 
 Coming soon. 
